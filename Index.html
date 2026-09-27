@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b1f3a">
+<meta name="description" content="ALMSDOT Trading Ltd Serial & Batch Management System">
+<title>ALMSDOT Trading Ltd</title>
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="styles.css">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+
+<div id="login" class="screen">
+  <div class="login-card">
+    <div class="logo">A</div>
+    <h1>ALMSDOT TRADING LTD</h1>
+    <p>Serial &amp; Batch Management System</p>
+
+    <form id="loginForm">
+      <input id="email" type="email" placeholder="Email" autocomplete="username" required>
+      <input id="password" type="password" placeholder="Password" autocomplete="current-password" required>
+      <button class="primary" type="submit">Sign in</button>
+    </form>
+    <button id="forgotBtn" class="linklike">Forgot password?</button>
+    <button id="showSignupBtn" class="linklike">Create an account</button>
+    <div id="loginMsg" class="msg"></div>
+
+    <form id="signupForm" class="hidden">
+      <input id="suName" type="text" placeholder="Full name" required>
+      <input id="suEmail" type="email" placeholder="Email" autocomplete="username" required>
+      <input id="suPassword" type="password" placeholder="Password (min 6 characters)" autocomplete="new-password" required>
+      <button class="primary" type="submit">Create account</button>
+      <button id="backToLoginBtn" type="button" class="linklike">Back to sign in</button>
+    </form>
+    <div id="signupMsg" class="msg"></div>
+    <p class="hint">New accounts start as Salesperson. An admin can change roles in Users.</p>
+  </div>
+</div>
+
+<div id="app" class="hidden">
+  <aside id="side">
+    <div class="brand">ALMSDOT <small>TRADING LTD</small></div>
+    <nav>
+      <button data-page="dashboard">&#9638; Dashboard</button>
+      <button data-page="inventory">&#9635; Inventory</button>
+      <button data-page="batches">&#128230; Batches</button>
+      <button data-page="sales">&#9823; Sales &amp; Teams</button>
+      <button data-page="reports">&#9701; Reports</button>
+      <button data-page="users" id="navUsers">&#128101; Users</button>
+      <button data-page="settings">&#9881; Settings</button>
+    </nav>
+    <button id="logout" class="logout">Sign out</button>
+  </aside>
+  <main>
+    <header>
+      <button id="menu" class="hamb">&#9776;</button>
+      <strong id="pageTitle">Dashboard</strong>
+      <span id="userBadge"></span>
+    </header>
+    <section id="content"></section>
+  </main>
+</div>
+
+<div id="modal" class="modal hidden"></div>
+<div id="toast" class="toast"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
